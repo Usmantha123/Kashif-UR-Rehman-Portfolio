@@ -80,12 +80,13 @@ export default function CallToActionBanner() {
 
             <a
               href={personalData.resumePath}
-              download="Kashif_Ur_Rehman_Resume.pdf"
-              onClick={() => trackConversion('download_cv_cta_banner', 'CTA Banner')}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackConversion('view_cv_cta_banner', 'CTA Banner')}
               className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors"
             >
               <FileDown className="w-4 h-4 text-slate-400" />
-              <span>Download CV</span>
+              <span>View CV</span>
               <span className="text-[11px] font-mono text-emerald-400/80">({personalData.cvUpdatedDate})</span>
             </a>
           </div>

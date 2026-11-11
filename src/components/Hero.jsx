@@ -160,15 +160,16 @@ export default function Hero() {
                 <span>WhatsApp Me</span>
               </a>
 
-              {/* Download CV */}
+              {/* View CV - Opens in new tab */}
               <a
                 href={personalData.resumePath}
-                download="Kashif_Ur_Rehman_Resume.pdf"
-                onClick={() => trackConversion('click_hero_download_cv', 'Hero Section')}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackConversion('click_hero_view_cv', 'Hero Section')}
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-sm transition-all duration-200 hover:border-emerald-500/40 active:scale-95 group"
               >
                 <FileDown className="w-4 h-4 text-emerald-400" />
-                <span>Download CV</span>
+                <span>View CV</span>
                 <span className="text-[11px] font-mono text-emerald-400/80">
                   (PDF · {personalData.cvUpdatedDate})
                 </span>

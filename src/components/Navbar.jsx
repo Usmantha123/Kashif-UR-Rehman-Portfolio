@@ -122,13 +122,14 @@ export default function Navbar({ activeSection, isDark, onToggleTheme }) {
           <div className="hidden lg:flex items-center space-x-2.5">
             <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
 
-            {/* Ghost CV Button */}
+            {/* Ghost CV Button - Opens in new tab */}
             <a
               href={personalData.resumePath}
-              download="Kashif_Ur_Rehman_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => trackConversion('click_nav_cv', 'Navbar')}
               className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-500 dark:hover:text-emerald-400 border border-slate-300 dark:border-slate-700/80 hover:border-emerald-500/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-              title="Download Resume (PDF)"
+              title="Open Resume (PDF)"
             >
               <FileDown className="w-4 h-4 text-emerald-400" />
               <span>CV</span>
@@ -210,7 +211,8 @@ export default function Navbar({ activeSection, isDark, onToggleTheme }) {
 
             <a
               href={personalData.resumePath}
-              download="Kashif_Ur_Rehman_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 trackConversion('click_nav_mobile_cv', 'Navbar Drawer');
@@ -218,7 +220,7 @@ export default function Navbar({ activeSection, isDark, onToggleTheme }) {
               className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-slate-900 text-slate-200 border border-slate-700"
             >
               <FileDown className="w-4 h-4 text-emerald-400" />
-              <span>Download CV (PDF · {personalData.cvUpdatedDate})</span>
+              <span>View CV (PDF · {personalData.cvUpdatedDate})</span>
             </a>
           </div>
         </div>
