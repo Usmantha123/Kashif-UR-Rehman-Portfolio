@@ -206,22 +206,18 @@ export default function Hero() {
             variants={itemVariants}
             className="flex-shrink-0 relative flex items-center justify-center lg:justify-end"
           >
-            <div className="relative">
-              {/* Soft blue aura behind photo */}
-              <div className="absolute inset-0 scale-110
-                              bg-gradient-to-br from-blue-300/50 via-blue-200/40 to-indigo-200/30
-                              dark:from-blue-600/30 dark:via-blue-500/20 dark:to-indigo-600/20
-                              blur-2xl rounded-full pointer-events-none" />
+            {/* Outer soft blue glow disc */}
+            <div className="relative w-80 h-80 sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] flex items-center justify-center">
+              {/* Light blue gradient background circle */}
+              <div className="absolute inset-0 rounded-full
+                              bg-gradient-to-br from-blue-100 via-blue-50 to-slate-100
+                              dark:from-blue-900/40 dark:via-blue-800/20 dark:to-slate-800/40
+                              shadow-xl" />
 
-              {/* Organic blob shape */}
-              <div
-                className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[380px] lg:h-[380px] overflow-hidden
-                           bg-gradient-to-br from-blue-100 to-blue-200
-                           dark:from-blue-900/40 dark:to-blue-800/40 shadow-2xl"
-                style={{
-                  borderRadius: '60% 40% 55% 45% / 55% 45% 60% 40%',
-                }}
-              >
+              {/* Photo circle — slightly smaller than the bg disc */}
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[370px] lg:h-[370px]
+                              rounded-full overflow-hidden shadow-2xl border-4
+                              border-white/80 dark:border-slate-700/80 z-10">
                 {!imgError && (
                   <img
                     src={profileImg}
@@ -231,7 +227,7 @@ export default function Hero() {
                       else setImgError(true);
                     }}
                     onError={() => setImgError(true)}
-                    className={`w-full h-full object-cover object-top transition-opacity duration-300 ${
+                    className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
                       hasValidImage ? 'opacity-100' : 'opacity-0'
                     }`}
                     loading="eager"
@@ -249,13 +245,13 @@ export default function Hero() {
                 )}
               </div>
 
-              {/* Active for Hire badge */}
-              <div className="absolute bottom-4 right-0 sm:-right-2
-                             flex items-center gap-1.5 px-4 py-2 rounded-full
+              {/* Active for Hire badge — bottom-right of the outer disc */}
+              <div className="absolute bottom-2 right-0 sm:-right-2 z-20
+                             flex items-center gap-1.5 px-4 py-2.5 rounded-full
                              bg-white dark:bg-slate-800 shadow-lg
                              border border-slate-100 dark:border-slate-700">
                 <span className="text-base">👑</span>
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">
+                <span className="text-sm font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">
                   + Active for Hire
                 </span>
               </div>
