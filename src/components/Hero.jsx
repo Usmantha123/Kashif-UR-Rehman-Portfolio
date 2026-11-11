@@ -237,7 +237,7 @@ export default function Hero() {
                         }
                       }}
                       onError={() => setImgError(true)}
-                      className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
+                      className={`w-full h-full object-cover object-top transition-opacity duration-300 ${
                         hasValidImage ? 'opacity-100' : 'opacity-0'
                       }`}
                       loading="eager"

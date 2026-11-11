@@ -28,7 +28,7 @@ export const personalData = {
   cvUpdatedDate: "Nov 2024",
   resumePath: "/resume.pdf",
   socialLinks: {
-    linkedin: "https://www.linkedin.com/in/kashif-ur-rehman-39238b244/",
+    linkedin: "https://www.linkedin.com/in/kashif-rehman-39238b244/",
     github: "", // Kept clean; shows if populated
     email: "mailto:kashifkhankk799872@gmail.com",
     whatsapp: "https://wa.me/923029119254?text=Hi%20Kashif%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
@@ -347,6 +347,6 @@ export const contactData = {
   phone: "+92 302 9119254",
   phoneRaw: "+923029119254",
   location: "Peshawar, Pakistan",
-  linkedin: "https://www.linkedin.com/in/kashif-ur-rehman-39238b244/",
+  linkedin: "https://www.linkedin.com/in/kashif-rehman-39238b244/",
   whatsappUrl: "https://wa.me/923029119254?text=Hi%20Kashif%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity.",
 };
