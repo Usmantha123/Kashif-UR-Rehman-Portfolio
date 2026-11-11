@@ -5,49 +5,37 @@ import {
   FileDown,
   MessageSquare,
   ArrowRight,
-  MapPin,
-  Linkedin,
-  Sparkles,
-  Terminal,
-  CheckCircle2,
-  ExternalLink,
   Briefcase,
   Layers,
-  CreditCard,
   Cloud,
   Code2,
+  Github,
 } from 'lucide-react';
 import { personalData, quickFacts } from '../data/data';
-import { useTypingEffect } from '../hooks/useTypingEffect';
 import { trackConversion } from '../utils/analytics';
 import profileImg from '../assets/profile.jpg';
 
 /**
- * High-Conversion Recruiter-First Hero Section
+ * Modern Clean Hero — matches reference design
  */
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const { displayText } = useTypingEffect(personalData.typingRoles, 75, 35, 1800);
   const [imgError, setImgError] = useState(false);
   const [hasValidImage, setHasValidImage] = useState(false);
 
-  // Split headline neatly: main outcome + secondary tech line
-  const [headlineMain, headlineTech] = personalData.headline.includes('|')
-    ? personalData.headline.split('|').map((s) => s.trim())
-    : [personalData.headline, ''];
+  // Tech stack badges shown under description
+  const techBadges = ['Node.js', 'NestJS', 'React', 'TypeScript'];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.08,
-      },
+      transition: { staggerChildren: shouldReduceMotion ? 0 : 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -60,270 +48,253 @@ export default function Hero() {
     if (!personalData.bookingUrl) {
       e.preventDefault();
       const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const getQuickFactIcon = (id) => {
+    const cls = 'w-5 h-5 text-blue-500';
     switch (id) {
-      case 'exp':
-        return <Briefcase className="w-3.5 h-3.5 text-blue-500" />;
-      case 'projects':
-        return <Layers className="w-3.5 h-3.5 text-blue-500" />;
-      case 'payments':
-        return <CreditCard className="w-3.5 h-3.5 text-blue-500" />;
-      case 'cloud':
-        return <Cloud className="w-3.5 h-3.5 text-blue-500" />;
-      default:
-        return <Code2 className="w-3.5 h-3.5 text-blue-500" />;
+      case 'exp':      return <Briefcase className={cls} />;
+      case 'projects': return <Layers className={cls} />;
+      case 'cloud':    return <Cloud className={cls} />;
+      default:         return <Code2 className={cls} />;
     }
   };
+
+  // Only show 4 stat cards (matching reference layout)
+  const statFacts = quickFacts.filter((f) =>
+    ['exp', 'projects', 'cloud', 'stack'].includes(f.id)
+  );
 
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center pt-24 sm:pt-28 pb-16 overflow-hidden bg-grid-pattern scroll-mt-24"
+      className="relative min-h-screen flex flex-col justify-center pt-20 pb-10 overflow-hidden scroll-mt-20
+                 bg-gradient-to-br from-[#EEF2FF] via-[#F0F4FF] to-[#E8EEFF]
+                 dark:from-[#0B1120] dark:via-[#0D1528] dark:to-[#0B1120]"
     >
-      {/* Soft Animated Aurora Gradient Mesh Background */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-blue-500/15 via-blue-400/10 to-indigo-500/10 rounded-full blur-[110px] pointer-events-none -z-10 animate-aurora" />
+      {/* Soft blue blob background — top right behind photo */}
+      <div className="absolute top-0 right-0 w-[55%] h-full
+                      bg-gradient-to-bl from-blue-200/60 via-blue-100/40 to-transparent
+                      dark:from-blue-900/20 dark:via-blue-800/10 dark:to-transparent
+                      rounded-bl-[80px] pointer-events-none -z-10" />
 
-      {/* Bottom Gradient Fade blending smoothly into TechMarquee */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[var(--bg)] to-transparent -z-10" />
+      {/* Extra soft radial glow centre-left */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px]
+                      bg-blue-300/20 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center"
+          className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10 lg:gap-0"
         >
-          {/* Left Column: Visual Pitch & CTAs */}
-          <div className="lg:col-span-7 text-center lg:text-left">
-            {/* Badges Row */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-4"
-            >
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-blue-500/10 text-slate-700 dark:text-slate-200 border border-blue-500/25 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-ping" />
+          {/* LEFT COLUMN */}
+          <div className="flex-1 flex flex-col justify-center text-center lg:text-left lg:pr-12 z-10">
+
+            {/* Available badge */}
+            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
+                               bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200
+                               shadow-md border border-slate-200/80 dark:border-slate-700/60">
+                <span className="text-base">🌟</span>
                 {personalData.availabilityStatus}
-              </span>
-
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-sm">
-                <MapPin className="w-3 h-3 text-blue-500" />
-                {personalData.location}
-              </span>
-
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-500/5 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-500/20">
-                <Sparkles className="w-3 h-3 text-blue-400" />
-                {personalData.openTo}
               </span>
             </motion.div>
 
-            {/* Candidate Name (Largest) */}
+            {/* Main headline */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight uppercase leading-none">
-                {personalData.name}
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-black leading-tight tracking-tight
+                             text-slate-900 dark:text-white">
+                Hi, I&apos;m{' '}
+                <span className="text-blue-600 dark:text-blue-400">
+                  {personalData.name}
+                </span>
               </h1>
             </motion.div>
 
-            {/* Fluid Outcome-Focused Headline */}
-            <motion.div variants={itemVariants} className="mt-3 space-y-1">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.18]">
-                {headlineMain}
+            {/* Sub-headline */}
+            <motion.div variants={itemVariants} className="mt-3">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 tracking-tight">
+                Backend &amp; Full Stack Developer
               </h2>
-              {headlineTech && (
-                <p className="text-base sm:text-lg md:text-xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200">
-                  {headlineTech}
-                </p>
-              )}
             </motion.div>
 
-            {/* Terminal Typing Line */}
-            <motion.div
-              variants={itemVariants}
-              className="mt-3 flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-300 min-h-[26px]"
-            >
-              <span className="text-blue-500 font-bold">&gt;</span>
-              <span className="text-slate-400 dark:text-slate-500">Specialization:</span>
-              <span className="font-semibold text-slate-900 dark:text-slate-100">
-                {displayText}
-              </span>
-              <span className="inline-block w-1.5 h-3.5 bg-blue-500 animate-pulse ml-0.5" />
-            </motion.div>
-
-            {/* Description (max ~60ch, softer color) */}
+            {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-[60ch] mx-auto lg:mx-0 leading-relaxed font-normal"
+              className="mt-4 text-base text-slate-600 dark:text-slate-400 max-w-[52ch] mx-auto lg:mx-0 leading-relaxed"
             >
-              {personalData.tagline} Delivered 10+ production projects across high-concurrency microservices, localized payment gateways, and AI automation.
+              {personalData.tagline} Delivered 10+ production projects across high-concurrency
+              microservices, localized payment gateways, and AI automation.
             </motion.p>
 
-            {/* Conversion Actions in a Tidy Row */}
+            {/* Tech stack badges */}
             <motion.div
               variants={itemVariants}
-              className="mt-7 flex flex-wrap items-center justify-center lg:justify-start gap-3"
+              className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-2"
             >
-              {/* PRIMARY CTA */}
+              {techBadges.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium
+                             bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300
+                             border border-slate-200 dark:border-slate-700 shadow-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3"
+            >
+              {/* Primary */}
               <a
-                href={personalData.bookingUrl || "#contact"}
-                target={personalData.bookingUrl ? "_blank" : "_self"}
+                href={personalData.bookingUrl || '#contact'}
+                target={personalData.bookingUrl ? '_blank' : '_self'}
                 rel="noopener noreferrer"
                 onClick={handleBooking}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-blue-600 hover:bg-blue-500 text-white shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm
+                           bg-blue-600 hover:bg-blue-500 text-white
+                           shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50
+                           transition-all duration-200 active:scale-95
+                           focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
-                <Calendar className="w-4 h-4 text-white" />
+                <Calendar className="w-4 h-4" />
                 <span>Schedule an Interview</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </a>
 
-              {/* SECONDARY: WhatsApp */}
+              {/* View Projects */}
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm
+                           bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200
+                           border border-slate-200 dark:border-slate-700
+                           hover:border-blue-400/60 hover:bg-slate-50 dark:hover:bg-slate-700
+                           shadow-sm transition-all duration-200 active:scale-95"
+              >
+                <Github className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                <span>View Projects</span>
+              </a>
+
+              {/* WhatsApp */}
               <a
                 href={personalData.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackConversion('click_hero_whatsapp', 'Hero Section')}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 shadow-sm backdrop-blur-md transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm
+                           bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200
+                           border border-slate-200 dark:border-slate-700
+                           hover:border-blue-400/60 hover:bg-slate-50 dark:hover:bg-slate-700
+                           shadow-sm transition-all duration-200 active:scale-95"
               >
                 <MessageSquare className="w-4 h-4 text-blue-500" />
                 <span>WhatsApp Me</span>
               </a>
-
-              {/* SECONDARY: View CV */}
-              <a
-                href={personalData.resumePath}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackConversion('click_hero_view_cv', 'Hero Section')}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 shadow-sm backdrop-blur-md transition-all active:scale-95 group"
-              >
-                <FileDown className="w-4 h-4 text-blue-500" />
-                <span>View CV</span>
-                <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">
-                  (PDF)
-                </span>
-              </a>
-
-              {/* TERTIARY: View Projects text link */}
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-1.5 px-3 py-3 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-              >
-                <span>View Projects</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </motion.div>
-
-            {/* Verified Profile Row with Fading Gradient Divider */}
-            <motion.div variants={itemVariants} className="mt-8">
-              <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-800 to-transparent mb-4" />
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">
-                  Verified Profile:
-                </span>
-                <a
-                  href={personalData.socialLinks.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackConversion('click_hero_linkedin', 'Hero Section')}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:text-blue-500 hover:border-blue-500/40 transition-colors shadow-sm"
-                >
-                  <Linkedin className="w-3.5 h-3.5 text-blue-500" />
-                  <span>LinkedIn</span>
-                  <ExternalLink className="w-3 h-3 text-slate-400" />
-                </a>
-              </div>
             </motion.div>
           </div>
 
-          {/* Right Column: Visual Avatar + Compact "Quick Facts" Cards */}
+          {/* RIGHT COLUMN — Photo */}
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-5 flex flex-col items-center lg:items-end gap-5 relative"
+            className="flex-shrink-0 relative flex items-center justify-center lg:justify-end"
           >
-            {/* Profile Avatar Frame with Refined Gradient Ring */}
-            <div className="relative group">
-              {/* Outer pulsing blue gradient aura */}
-              <div className="absolute -inset-3 bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 rounded-full blur-lg opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse" />
+            <div className="relative">
+              {/* Soft blue aura behind photo */}
+              <div className="absolute inset-0 scale-110
+                              bg-gradient-to-br from-blue-300/50 via-blue-200/40 to-indigo-200/30
+                              dark:from-blue-600/30 dark:via-blue-500/20 dark:to-indigo-600/20
+                              blur-2xl rounded-full pointer-events-none" />
 
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-[3px] bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 shadow-2xl">
-                <div className="w-full h-full rounded-full overflow-hidden bg-slate-950 flex items-center justify-center relative shadow-inner">
-                  {/* Photo with fallback check */}
-                  {!imgError && (
-                    <img
-                      src={profileImg}
-                      alt={personalData.name}
-                      onLoad={(e) => {
-                        if (e.target.naturalWidth > 10) {
-                          setHasValidImage(true);
-                        } else {
-                          setImgError(true);
-                        }
-                      }}
-                      onError={() => setImgError(true)}
-                      className={`w-full h-full object-cover object-top transition-opacity duration-300 ${
-                        hasValidImage ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      loading="eager"
-                    />
-                  )}
-
-                  {/* High-End Initials Avatar Fallback */}
-                  {(!hasValidImage || imgError) && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950/40 text-center select-none p-4">
-                      <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mb-1.5">
-                        <Terminal className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <span className="font-mono text-2xl font-extrabold text-white tracking-widest">
-                        {personalData.initials}
-                      </span>
-                      <span className="text-[10px] font-mono text-blue-400 mt-1 uppercase tracking-wider">
-                        Full Stack Dev
-                      </span>
-                    </div>
-                  )}
-                </div>
+              {/* Organic blob shape */}
+              <div
+                className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[380px] lg:h-[380px] overflow-hidden
+                           bg-gradient-to-br from-blue-100 to-blue-200
+                           dark:from-blue-900/40 dark:to-blue-800/40 shadow-2xl"
+                style={{
+                  borderRadius: '60% 40% 55% 45% / 55% 45% 60% 40%',
+                }}
+              >
+                {!imgError && (
+                  <img
+                    src={profileImg}
+                    alt={personalData.name}
+                    onLoad={(e) => {
+                      if (e.target.naturalWidth > 10) setHasValidImage(true);
+                      else setImgError(true);
+                    }}
+                    onError={() => setImgError(true)}
+                    className={`w-full h-full object-cover object-top transition-opacity duration-300 ${
+                      hasValidImage ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    loading="eager"
+                  />
+                )}
+                {/* Fallback initials */}
+                {(!hasValidImage || imgError) && (
+                  <div className="absolute inset-0 flex items-center justify-center
+                                  bg-gradient-to-br from-blue-200 to-blue-300
+                                  dark:from-blue-900 dark:to-blue-800">
+                    <span className="text-5xl font-black text-blue-600 dark:text-blue-300 tracking-widest">
+                      {personalData.initials}
+                    </span>
+                  </div>
+                )}
               </div>
 
-              {/* Status Ring Tag */}
-              <div className="absolute -bottom-1 right-2 sm:right-4 bg-slate-950/95 border border-blue-500/40 rounded-full px-3 py-1 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
-                <span className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wide">
-                  Active Pro
+              {/* Active for Hire badge */}
+              <div className="absolute bottom-4 right-0 sm:-right-2
+                             flex items-center gap-1.5 px-4 py-2 rounded-full
+                             bg-white dark:bg-slate-800 shadow-lg
+                             border border-slate-100 dark:border-slate-700">
+                <span className="text-base">👑</span>
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">
+                  + Active for Hire
                 </span>
               </div>
             </div>
-
-            {/* Compact "Quick Facts" Glass Stack */}
-            <div className="w-full max-w-sm space-y-2 animate-float">
-              {quickFacts.map((fact) => (
-                <div
-                  key={fact.id}
-                  className="glass-card p-2.5 px-3.5 rounded-2xl shadow-sm hover:border-blue-500/40 hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-between gap-3 text-left group"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                      {getQuickFactIcon(fact.id)}
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-900 dark:text-white font-mono leading-tight">
-                        {fact.title}
-                      </p>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
-                        {fact.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 shrink-0">
-                    {fact.highlight}
-                  </span>
-                </div>
-              ))}
-            </div>
           </motion.div>
+        </motion.div>
+
+        {/* STATS ROW */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mt-12 lg:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4"
+        >
+          {statFacts.map((fact) => (
+            <motion.div
+              key={fact.id}
+              variants={itemVariants}
+              className="flex items-center gap-3 px-5 py-4 rounded-2xl
+                         bg-white dark:bg-slate-800/60
+                         border border-slate-200/80 dark:border-slate-700/60
+                         shadow-sm hover:shadow-md hover:-translate-y-0.5
+                         transition-all duration-300"
+            >
+              <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10
+                              border border-blue-100 dark:border-blue-500/20
+                              flex items-center justify-center shrink-0">
+                {getQuickFactIcon(fact.id)}
+              </div>
+              <div>
+                <p className="text-base font-black text-slate-900 dark:text-white leading-tight">
+                  {fact.title}
+                </p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
+                  {fact.subtitle}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
