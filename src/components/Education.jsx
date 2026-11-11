@@ -11,7 +11,7 @@ export default function Education() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="education" className="py-20 sm:py-28 relative scroll-mt-24">
+    <section id="education" className="py-12 sm:py-16 relative scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Academic Background"

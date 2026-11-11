@@ -60,7 +60,7 @@ export default function About() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 sm:py-28 relative scroll-mt-24">
+    <section id="about" ref={sectionRef} className="pt-6 pb-12 sm:pt-8 sm:pb-16 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="About Me"

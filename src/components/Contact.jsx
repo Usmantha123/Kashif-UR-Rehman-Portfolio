@@ -136,7 +136,7 @@ export default function Contact({ onShowToast }) {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative scroll-mt-24">
+    <section id="contact" className="py-12 sm:py-16 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Fast-Track Communication"

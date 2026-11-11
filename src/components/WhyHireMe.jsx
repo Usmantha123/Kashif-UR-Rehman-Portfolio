@@ -37,7 +37,7 @@ export default function WhyHireMe() {
   };
 
   return (
-    <section id="why-hire-me" className="py-20 sm:py-24 relative scroll-mt-24">
+    <section id="why-hire-me" className="pt-12 pb-6 sm:pt-16 sm:pb-8 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Direct Value Proposition"

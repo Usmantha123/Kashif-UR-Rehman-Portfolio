@@ -11,7 +11,7 @@ export default function Experience() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="experience" className="py-20 sm:py-28 relative scroll-mt-24">
+    <section id="experience" className="py-12 sm:py-16 relative scroll-mt-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Career Journey"

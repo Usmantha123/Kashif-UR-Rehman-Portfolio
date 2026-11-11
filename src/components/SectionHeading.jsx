@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  */
 export default function SectionHeading({ badge, title, subtitle, centered = true }) {
   return (
-    <div className={`mb-12 md:mb-16 ${centered ? 'text-center' : 'text-left'}`}>
+    <div className={`mb-8 md:mb-10 ${centered ? 'text-center' : 'text-left'}`}>
       {badge && (
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-3 tracking-wider uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
