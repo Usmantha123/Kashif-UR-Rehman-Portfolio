@@ -247,9 +247,9 @@ export default function Hero() {
             {/* Profile Avatar Frame with Refined Gradient Ring */}
             <div className="relative group">
               {/* Outer pulsing blue gradient aura */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 rounded-full blur-md opacity-70 group-hover:opacity-95 transition duration-500 animate-pulse" />
+              <div className="absolute -inset-3 bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 rounded-full blur-lg opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse" />
 
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full p-[3px] bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 shadow-2xl">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-[3px] bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-950 flex items-center justify-center relative shadow-inner">
                   {/* Photo with fallback check */}
                   {!imgError && (
