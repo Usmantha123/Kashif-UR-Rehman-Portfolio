@@ -56,30 +56,35 @@ export default function WhyHireMe() {
             <motion.div
               key={item.id}
               variants={cardVariants}
-              className="relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 hover:border-emerald-500/50 hover:shadow-glow transition-all duration-300 group"
+              whileHover={shouldReduceMotion ? {} : { y: -6 }}
+              className="relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 glass-card hover:border-emerald-500/50 hover:shadow-glow transition-all duration-300 group overflow-hidden"
             >
-              {/* Top Accent Gradient Line */}
-              <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent group-hover:via-emerald-400 transition-all duration-300" />
+              {/* Animated gradient top-border */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-300/60 dark:via-slate-700/60 to-transparent group-hover:opacity-0 transition-opacity duration-500" />
 
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200">
+              {/* Subtle bg glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/5 rounded-2xl transition-all duration-500 pointer-events-none" />
+
+              <div className="relative">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300">
                   {iconMap[item.icon] || <Server className="w-6 h-6 text-emerald-400" />}
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors leading-snug">
                   {item.title}
                 </h3>
 
-                <p className="text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 mt-1 mb-3">
+                <p className="text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-1.5 mb-3 tracking-wide uppercase">
                   {item.subtitle}
                 </p>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center gap-1.5 text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
+              <div className="relative mt-6 pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center gap-2 text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                 <span className="truncate">{item.badge}</span>
               </div>

@@ -9,9 +9,9 @@ export default function Toast({ message, type = 'success', onClose }) {
   if (!message) return null;
 
   const bgStyles = {
-    success: 'bg-emerald-950/90 text-emerald-200 border-emerald-500/40 shadow-emerald-950/50',
-    error: 'bg-red-950/90 text-red-200 border-red-500/40 shadow-red-950/50',
-    info: 'bg-slate-900/90 text-slate-200 border-slate-700 shadow-slate-950/50',
+    success: 'bg-slate-900/95 dark:bg-slate-900/95 text-emerald-300 border-emerald-500/50 shadow-emerald-950/40',
+    error: 'bg-slate-900/95 dark:bg-slate-900/95 text-red-300 border-red-500/50 shadow-red-950/40',
+    info: 'bg-slate-900/95 dark:bg-slate-900/95 text-slate-200 border-slate-700 shadow-slate-950/40',
   };
 
   const icons = {
@@ -24,7 +24,7 @@ export default function Toast({ message, type = 'success', onClose }) {
     <div
       role="status"
       aria-live="polite"
-      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border backdrop-blur-md shadow-xl transition-all duration-300 animate-slide-up ${bgStyles[type] || bgStyles.success}`}
+      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4.5 py-3 rounded-2xl border backdrop-blur-xl shadow-2xl transition-all duration-300 animate-slide-up ${bgStyles[type] || bgStyles.success}`}
     >
       {icons[type]}
       <p className="text-sm font-medium pr-2">{message}</p>

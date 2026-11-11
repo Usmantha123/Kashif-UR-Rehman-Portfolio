@@ -31,6 +31,9 @@ export default function CallToActionBanner() {
           transition={{ duration: 0.6 }}
           className="relative rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900/95 to-emerald-950/40 border border-emerald-500/30 shadow-2xl text-center"
         >
+          {/* Top Gradient Line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500" />
+
           {/* Background Ambient Glow */}
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -72,7 +75,7 @@ export default function CallToActionBanner() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackConversion('click_whatsapp_cta_banner', 'CTA Banner')}
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-semibold bg-slate-800/90 hover:bg-slate-700/90 text-white border border-slate-700 shadow-md transition-all active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-semibold bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-700/80 shadow-md backdrop-blur-sm transition-all active:scale-95"
             >
               <MessageSquare className="w-4 h-4 text-emerald-400" />
               <span>WhatsApp Me</span>
@@ -83,7 +86,7 @@ export default function CallToActionBanner() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackConversion('view_cv_cta_banner', 'CTA Banner')}
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-semibold bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-slate-700/50 backdrop-blur-sm transition-colors"
             >
               <FileDown className="w-4 h-4 text-slate-400" />
               <span>View CV</span>

@@ -27,7 +27,7 @@ export default function StickyActions() {
         <div className="relative">
           {/* Tooltip */}
           {showTooltip && (
-            <div className="absolute right-0 bottom-full mb-3 px-3 py-1.5 rounded-xl bg-slate-900 border border-emerald-500/30 text-white text-xs font-medium shadow-xl whitespace-nowrap animate-fade-in flex items-center gap-1.5">
+            <div className="absolute right-0 bottom-full mb-3 px-3 py-1.5 rounded-xl bg-slate-900/95 backdrop-blur-md border border-emerald-500/40 text-white text-xs font-medium shadow-xl whitespace-nowrap animate-fade-in flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Chat with Kashif</span>
             </div>
@@ -40,7 +40,7 @@ export default function StickyActions() {
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
             onClick={() => trackConversion('click_floating_whatsapp', 'Desktop Float')}
-            className="flex items-center justify-center w-13 h-13 p-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-glow hover:shadow-glow-lg transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="flex items-center justify-center w-14 h-14 p-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-glow hover:shadow-glow-lg border border-emerald-300/30 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
             aria-label="Chat with Kashif on WhatsApp"
             title="Chat with Kashif"
           >
@@ -50,7 +50,7 @@ export default function StickyActions() {
       </div>
 
       {/* Mobile Sticky Bottom Conversion Bar (hidden on md and larger) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/90 p-2.5 px-3 flex items-center justify-between gap-2 shadow-2xl safe-area-pb">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/90 backdrop-blur-xl border-t border-slate-800/90 p-2.5 px-4 flex items-center justify-between gap-2.5 shadow-2xl safe-area-pb">
         {/* Book Interview */}
         <a
           href={personalData.bookingUrl || "#contact"}
@@ -69,7 +69,7 @@ export default function StickyActions() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackConversion('click_mobile_whatsapp', 'Sticky Mobile Bar')}
-          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-100 border border-slate-700 active:scale-95 transition-all text-center"
+          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-100 border border-slate-700/80 active:scale-95 transition-all text-center"
         >
           <MessageSquare className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
           <span className="truncate">WhatsApp</span>
@@ -79,7 +79,7 @@ export default function StickyActions() {
         <a
           href={`tel:${personalData.phoneRaw}`}
           onClick={() => trackConversion('click_mobile_call', 'Sticky Mobile Bar')}
-          className="flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800 text-emerald-400 border border-slate-700 active:scale-95 transition-all shrink-0"
+          className="flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800/90 text-emerald-400 border border-slate-700/80 active:scale-95 transition-all shrink-0"
           aria-label="Direct Phone Call to Kashif"
         >
           <Phone className="w-4 h-4" />

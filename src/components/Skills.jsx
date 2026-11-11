@@ -53,7 +53,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 sm:py-28 relative bg-slate-100/50 dark:bg-slate-950/40 scroll-mt-24">
+    <section id="skills" className="py-20 sm:py-28 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Technical Skills"
@@ -72,25 +72,29 @@ export default function Skills() {
             <motion.div
               key={group.category}
               variants={cardVariants}
-              className="rounded-2xl p-6 bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 hover:border-emerald-500/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+              whileHover={shouldReduceMotion ? {} : { y: -5 }}
+              className="relative rounded-2xl p-6 glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 flex flex-col justify-between group overflow-hidden"
             >
+              {/* Subtle top border gradient accent on hover */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                <div className="flex items-center gap-3.5 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300 shrink-0">
                     {iconMap[group.icon] || <Cpu className="w-5 h-5 text-emerald-400" />}
                   </div>
-                  <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+                  <h3 className="font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
                     {group.category}
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex flex-wrap gap-2 pt-1">
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100/80 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
                     >
-                      <CheckCircle className="w-3 h-3 text-emerald-500/70" />
+                      <CheckCircle className="w-3 h-3 text-emerald-500/80" />
                       {skill}
                     </span>
                   ))}

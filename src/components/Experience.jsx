@@ -30,29 +30,31 @@ export default function Experience() {
               className="relative group"
             >
               {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-4 border-emerald-500 flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-300" />
+              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-4 border-emerald-500 shadow-glow flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
               </div>
 
               {/* Card Container */}
-              <div className="rounded-2xl p-6 sm:p-8 bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 hover:border-emerald-500/40 hover:shadow-lg transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+              <div className="relative rounded-2xl p-6 sm:p-8 glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-5 border-b border-slate-200/80 dark:border-slate-800">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                       {item.role}
                     </h3>
-                    <p className="text-emerald-600 dark:text-emerald-400 font-semibold text-base sm:text-lg flex items-center gap-1.5 mt-0.5">
-                      <Briefcase className="w-4 h-4" />
+                    <p className="text-emerald-600 dark:text-emerald-400 font-semibold text-base sm:text-lg flex items-center gap-1.5 mt-1">
+                      <Briefcase className="w-4 h-4 text-emerald-500" />
                       <span>{item.company}</span>
                     </p>
                   </div>
 
                   <div className="flex flex-wrap sm:flex-col sm:items-end gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium">
-                      <Calendar className="w-3.5 h-3.5" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium">
+                      <Calendar className="w-3.5 h-3.5 text-emerald-500" />
                       {item.period}
                     </span>
-                    <span className="inline-flex items-center gap-1">
+                    <span className="inline-flex items-center gap-1 text-slate-500 dark:text-slate-400">
                       <MapPin className="w-3.5 h-3.5 text-slate-400" />
                       {item.location}
                     </span>
@@ -61,10 +63,10 @@ export default function Experience() {
 
                 {/* Highlights */}
                 <div className="mt-6">
-                  <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-4">
+                  <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
                     Key Responsibilities & Achievements
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3.5">
                     {item.highlights.map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                         <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-1 shrink-0" />

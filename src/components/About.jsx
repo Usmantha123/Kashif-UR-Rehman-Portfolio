@@ -20,19 +20,20 @@ function StatCard({ stat, inView }) {
   };
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 shadow-sm hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 group">
-      <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200">
+    <div className="p-6 rounded-2xl glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 group overflow-hidden relative">
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300">
         {statIcons[stat.id] || <Code2 className="w-5 h-5 text-emerald-400" />}
       </div>
       <div className="flex items-baseline gap-1">
-        <span className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">
+        <span className="text-4xl font-black text-slate-900 dark:text-white font-mono tracking-tighter">
           {count}
         </span>
         <span className="text-2xl font-bold text-emerald-500 font-mono">
           {stat.suffix}
         </span>
       </div>
-      <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">
+      <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400 leading-snug">
         {stat.label}
       </p>
     </div>
@@ -72,7 +73,7 @@ export default function About() {
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="relative max-w-4xl mx-auto rounded-3xl bg-slate-100/80 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-8 sm:p-10 backdrop-blur-sm"
+          className="relative max-w-4xl mx-auto rounded-3xl glass-card p-8 sm:p-10"
         >
           <div className="flex items-center gap-2 mb-4 text-emerald-500 font-mono text-xs uppercase tracking-wider">
             <Shield className="w-4 h-4" />

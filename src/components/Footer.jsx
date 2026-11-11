@@ -28,7 +28,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12 transition-colors">
+    <footer className="border-t border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-950 py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand & Tagline */}
@@ -36,7 +36,7 @@ export default function Footer() {
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="flex items-center gap-2 group font-mono font-bold text-lg text-slate-900 dark:text-white"
+              className="flex items-center gap-2.5 group font-mono font-bold text-lg text-slate-900 dark:text-white"
             >
               <span className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform text-sm">
                 {personalData.initials}
@@ -55,7 +55,7 @@ export default function Footer() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
               >
                 {link.name}
               </a>
@@ -68,7 +68,7 @@ export default function Footer() {
               href={personalData.socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl text-slate-500 hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 border border-transparent hover:border-slate-800 transition-colors"
+              className="p-2.5 rounded-xl text-slate-500 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 hover:border-emerald-500/30 transition-all"
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4" />
@@ -76,7 +76,7 @@ export default function Footer() {
 
             <a
               href={personalData.socialLinks.email}
-              className="p-2.5 rounded-xl text-slate-500 hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 border border-transparent hover:border-slate-800 transition-colors"
+              className="p-2.5 rounded-xl text-slate-500 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 hover:border-emerald-500/30 transition-all"
               aria-label="Email Kashif"
             >
               <Mail className="w-4 h-4" />
@@ -85,7 +85,7 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               type="button"
-              className="p-2.5 rounded-xl text-slate-500 hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 border border-transparent hover:border-slate-800 transition-colors"
+              className="p-2.5 rounded-xl text-slate-500 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 hover:border-emerald-500/30 transition-all"
               aria-label="Scroll back to top"
               title="Scroll back to top"
             >
