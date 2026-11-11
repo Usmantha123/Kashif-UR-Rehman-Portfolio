@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linkedin, Mail, ArrowUp } from 'lucide-react';
-import { personalData, navLinks } from '../data/data';
+import { personalData } from '../data/data';
 
 /**
  * Footer component with copyright, navigation links, and back-to-top trigger
@@ -47,20 +47,6 @@ export default function Footer() {
               {personalData.tagline}
             </p>
           </div>
-
-          {/* Quick Nav Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-600 dark:text-slate-400">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
 
           {/* Socials & Top Button */}
           <div className="flex items-center gap-3">
