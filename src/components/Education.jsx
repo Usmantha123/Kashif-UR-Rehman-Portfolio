@@ -28,17 +28,17 @@ export default function Education() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
               whileHover={shouldReduceMotion ? {} : { y: -4 }}
-              className="rounded-3xl p-6 sm:p-8 glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 relative overflow-hidden group"
+              className="rounded-3xl p-6 sm:p-8 glass-card hover:border-blue-500/40 hover:shadow-glow transition-all duration-300 relative overflow-hidden group"
             >
               {/* Subtle top border gradient accent on hover */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Background watermark icon */}
               <GraduationCap className="absolute -bottom-6 -right-6 w-36 h-36 text-slate-200/50 dark:text-slate-800/20 pointer-events-none group-hover:scale-110 transition-transform duration-500" />
 
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 relative">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-500 dark:text-emerald-400 group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 text-blue-500 dark:text-blue-400 group-hover:scale-105 transition-transform">
                     <GraduationCap className="w-6 h-6" />
                   </div>
                   <div>
@@ -52,12 +52,12 @@ export default function Education() {
                 </div>
 
                 <div className="flex sm:flex-col items-start sm:items-end gap-2 shrink-0">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                    <Calendar className="w-3.5 h-3.5 text-emerald-500" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                    <Calendar className="w-3.5 h-3.5 text-blue-500" />
                     {edu.period}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40">
-                    <Award className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-500/40">
+                    <Award className="w-3.5 h-3.5 text-blue-500" />
                     {edu.grade}
                   </span>
                 </div>

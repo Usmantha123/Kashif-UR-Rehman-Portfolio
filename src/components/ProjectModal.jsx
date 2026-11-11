@@ -79,14 +79,14 @@ export default function ProjectModal({ project, isOpen, onClose }) {
         className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-slate-900/95 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-100 backdrop-blur-xl"
       >
         {/* Top Gradient Line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500 rounded-t-3xl" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-500 rounded-t-3xl" />
 
         {/* Close Button */}
         <button
           ref={closeButtonRef}
           onClick={onClose}
           type="button"
-          className="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+          className="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           aria-label="Close project details"
         >
           <X className="w-5 h-5" />
@@ -94,14 +94,14 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
         {/* Header */}
         <div className="pr-10">
-          <div className="flex items-center gap-2 text-emerald-400 text-xs font-mono font-medium tracking-wide uppercase mb-2">
+          <div className="flex items-center gap-2 text-blue-400 text-xs font-mono font-medium tracking-wide uppercase mb-2">
             <Sparkles className="w-4 h-4" />
             <span>{project.category || 'Featured Case Study'}</span>
             {project.clientLocation && (
               <>
                 <span>•</span>
                 <span className="flex items-center gap-1 text-slate-400">
-                  <MapPin className="w-3 h-3 text-emerald-400" />
+                  <MapPin className="w-3 h-3 text-blue-400" />
                   {project.clientLocation}
                 </span>
               </>
@@ -110,7 +110,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           <h3 id="modal-title" className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             {project.title}
           </h3>
-          <p className="text-emerald-400/90 font-medium text-sm sm:text-base mt-1">
+          <p className="text-blue-400/90 font-medium text-sm sm:text-base mt-1">
             {project.subtitle}
           </p>
           {project.role && (
@@ -134,7 +134,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             <ul className="space-y-2.5">
               {project.keyPoints.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -151,7 +151,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
+                className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20"
               >
                 {tag}
               </span>
@@ -167,7 +167,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-medium text-sm transition-colors shadow-lg shadow-emerald-500/20"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-colors shadow-lg shadow-blue-500/20"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Live Demo</span>

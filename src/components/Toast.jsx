@@ -9,13 +9,13 @@ export default function Toast({ message, type = 'success', onClose }) {
   if (!message) return null;
 
   const bgStyles = {
-    success: 'bg-slate-900/95 dark:bg-slate-900/95 text-emerald-300 border-emerald-500/50 shadow-emerald-950/40',
+    success: 'bg-slate-900/95 dark:bg-slate-900/95 text-blue-300 border-blue-500/50 shadow-blue-950/40',
     error: 'bg-slate-900/95 dark:bg-slate-900/95 text-red-300 border-red-500/50 shadow-red-950/40',
     info: 'bg-slate-900/95 dark:bg-slate-900/95 text-slate-200 border-slate-700 shadow-slate-950/40',
   };
 
   const icons = {
-    success: <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />,
+    success: <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0" />,
     error: <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />,
     info: <Info className="w-5 h-5 text-blue-400 shrink-0" />,
   };

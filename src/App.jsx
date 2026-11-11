@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-300 font-sans antialiased transition-colors duration-300 pb-16 md:pb-0">
+    <div className="min-h-screen bg-[var(--bg)] text-[var(--text-body)] selection:bg-blue-500/30 selection:text-blue-300 font-sans antialiased transition-colors duration-300 pb-16 md:pb-0">
       {/* Fixed Sticky Header Navigation */}
       <Navbar
         activeSection={activeSection}

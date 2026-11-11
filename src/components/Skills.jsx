@@ -22,15 +22,15 @@ export default function Skills() {
   const shouldReduceMotion = useReducedMotion();
 
   const iconMap = {
-    Server: <Server className="w-5 h-5 text-emerald-400" />,
-    Layout: <Layout className="w-5 h-5 text-emerald-400" />,
-    Database: <Database className="w-5 h-5 text-emerald-400" />,
-    Layers: <Layers className="w-5 h-5 text-emerald-400" />,
-    Cloud: <Cloud className="w-5 h-5 text-emerald-400" />,
-    CreditCard: <CreditCard className="w-5 h-5 text-emerald-400" />,
-    ShieldCheck: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
-    GitBranch: <GitBranch className="w-5 h-5 text-emerald-400" />,
-    Cpu: <Cpu className="w-5 h-5 text-emerald-400" />,
+    Server: <Server className="w-5 h-5 text-blue-400" />,
+    Layout: <Layout className="w-5 h-5 text-blue-400" />,
+    Database: <Database className="w-5 h-5 text-blue-400" />,
+    Layers: <Layers className="w-5 h-5 text-blue-400" />,
+    Cloud: <Cloud className="w-5 h-5 text-blue-400" />,
+    CreditCard: <CreditCard className="w-5 h-5 text-blue-400" />,
+    ShieldCheck: <ShieldCheck className="w-5 h-5 text-blue-400" />,
+    GitBranch: <GitBranch className="w-5 h-5 text-blue-400" />,
+    Cpu: <Cpu className="w-5 h-5 text-blue-400" />,
   };
 
   const containerVariants = {
@@ -73,17 +73,17 @@ export default function Skills() {
               key={group.category}
               variants={cardVariants}
               whileHover={shouldReduceMotion ? {} : { y: -5 }}
-              className="relative rounded-2xl p-6 glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+              className="relative rounded-2xl p-6 glass-card hover:border-blue-500/40 hover:shadow-glow transition-all duration-300 flex flex-col justify-between group overflow-hidden"
             >
               {/* Subtle top border gradient accent on hover */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div>
                 <div className="flex items-center gap-3.5 mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300 shrink-0">
-                    {iconMap[group.icon] || <Cpu className="w-5 h-5 text-emerald-400" />}
+                  <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/15 transition-all duration-300 shrink-0">
+                    {iconMap[group.icon] || <Cpu className="w-5 h-5 text-blue-400" />}
                   </div>
-                  <h3 className="font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                  <h3 className="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
                     {group.category}
                   </h3>
                 </div>
@@ -92,9 +92,9 @@ export default function Skills() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100/80 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100/80 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-500/40 transition-colors"
                     >
-                      <CheckCircle className="w-3 h-3 text-emerald-500/80" />
+                      <CheckCircle className="w-3 h-3 text-blue-500/80" />
                       {skill}
                     </span>
                   ))}

@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light Theme */
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --border: rgba(226, 232, 240, 0.9);
+  --border-glass: rgba(226, 232, 240, 0.9);
+  --accent: #2563EB;
+  --accent-2: #3B82F6;
+  --text-heading: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --accent-glow: rgba(37, 99, 235, 0.25);
+  --accent-glow-lg: rgba(37, 99, 235, 0.35);
+  --success: #22C55E;
+}
+
+.dark {
+  /* Dark Theme (Royal Blue) */
+  --bg: #0B1120;
+  --surface: #111A2E;
+  --surface-glass: rgba(17, 26, 46, 0.7);
+  --border: rgba(148, 163, 184, 0.15);
+  --border-glass: rgba(148, 163, 184, 0.15);
+  --accent: #3B82F6;
+  --accent-2: #60A5FA;
+  --text-heading: #F1F5F9;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --accent-glow: rgba(59, 130, 246, 0.35);
+  --accent-glow-lg: rgba(59, 130, 246, 0.5);
+  --success: #22C55E;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -12,11 +46,13 @@
 
   body {
     line-height: 1.7;
+    background-color: var(--bg);
+    color: var(--text-body);
   }
 
   /* Accessible focus styling */
   *:focus-visible {
-    outline: 2px solid #10b981;
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
@@ -27,20 +63,24 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #090d16;
+    background: #F1F5F9;
   }
 
   .dark ::-webkit-scrollbar-track {
-    background: #020617;
+    background: #0B1120;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: #94A3B8;
     border-radius: 9999px;
   }
 
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+  }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #10b981;
+    background: var(--accent);
   }
 }
 
@@ -72,29 +112,16 @@
 
 /* Glassmorphism System */
 .glass {
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-
-.light .glass {
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--surface-glass);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.55);
+  background: var(--surface-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.6);
-}
-
-.light .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  border: 1px solid var(--border-glass);
 }
 
 /* Infinite Marquee Animation */

@@ -13,23 +13,23 @@ function StatCard({ stat, inView }) {
   const count = useCountUp(stat.value, 1600, stat.decimals, inView);
 
   const statIcons = {
-    exp: <Briefcase className="w-5 h-5 text-emerald-400" />,
-    projects: <FolderGit2 className="w-5 h-5 text-emerald-400" />,
-    clouds: <Cloud className="w-5 h-5 text-emerald-400" />,
-    payments: <CreditCard className="w-5 h-5 text-emerald-400" />,
+    exp: <Briefcase className="w-5 h-5 text-blue-400" />,
+    projects: <FolderGit2 className="w-5 h-5 text-blue-400" />,
+    clouds: <Cloud className="w-5 h-5 text-blue-400" />,
+    payments: <CreditCard className="w-5 h-5 text-blue-400" />,
   };
 
   return (
-    <div className="p-6 rounded-2xl glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 group overflow-hidden relative">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300">
-        {statIcons[stat.id] || <Code2 className="w-5 h-5 text-emerald-400" />}
+    <div className="p-6 rounded-2xl glass-card hover:border-blue-500/40 hover:shadow-glow transition-all duration-300 group overflow-hidden relative">
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-blue-500/15 transition-all duration-300">
+        {statIcons[stat.id] || <Code2 className="w-5 h-5 text-blue-400" />}
       </div>
       <div className="flex items-baseline gap-1">
         <span className="text-4xl font-black text-slate-900 dark:text-white font-mono tracking-tighter">
           {count}
         </span>
-        <span className="text-2xl font-bold text-emerald-500 font-mono">
+        <span className="text-2xl font-bold text-blue-500 font-mono">
           {stat.suffix}
         </span>
       </div>
@@ -75,7 +75,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="relative max-w-4xl mx-auto rounded-3xl glass-card p-8 sm:p-10"
         >
-          <div className="flex items-center gap-2 mb-4 text-emerald-500 font-mono text-xs uppercase tracking-wider">
+          <div className="flex items-center gap-2 mb-4 text-blue-500 font-mono text-xs uppercase tracking-wider">
             <Shield className="w-4 h-4" />
             <span>Professional Summary</span>
           </div>

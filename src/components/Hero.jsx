@@ -69,15 +69,15 @@ export default function Hero() {
   const getQuickFactIcon = (id) => {
     switch (id) {
       case 'exp':
-        return <Briefcase className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Briefcase className="w-3.5 h-3.5 text-blue-500" />;
       case 'projects':
-        return <Layers className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Layers className="w-3.5 h-3.5 text-blue-500" />;
       case 'payments':
-        return <CreditCard className="w-3.5 h-3.5 text-emerald-500" />;
+        return <CreditCard className="w-3.5 h-3.5 text-blue-500" />;
       case 'cloud':
-        return <Cloud className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Cloud className="w-3.5 h-3.5 text-blue-500" />;
       default:
-        return <Code2 className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Code2 className="w-3.5 h-3.5 text-blue-500" />;
     }
   };
 
@@ -87,10 +87,10 @@ export default function Hero() {
       className="relative min-h-[90vh] flex items-center justify-center pt-24 sm:pt-28 pb-16 overflow-hidden bg-grid-pattern scroll-mt-24"
     >
       {/* Soft Animated Aurora Gradient Mesh Background */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-emerald-500/15 via-teal-500/10 to-indigo-500/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-aurora" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-blue-500/15 via-blue-400/10 to-indigo-500/10 rounded-full blur-[110px] pointer-events-none -z-10 animate-aurora" />
 
       {/* Bottom Gradient Fade blending smoothly into TechMarquee */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent -z-10" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[var(--bg)] to-transparent -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
@@ -106,18 +106,18 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-4"
             >
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-blue-500/10 text-slate-700 dark:text-slate-200 border border-blue-500/25 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-ping" />
                 {personalData.availabilityStatus}
               </span>
 
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-sm">
-                <MapPin className="w-3 h-3 text-emerald-500" />
+                <MapPin className="w-3 h-3 text-blue-500" />
                 {personalData.location}
               </span>
 
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-500/5 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
-                <Sparkles className="w-3 h-3 text-emerald-400" />
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-500/5 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-500/20">
+                <Sparkles className="w-3 h-3 text-blue-400" />
                 {personalData.openTo}
               </span>
             </motion.div>
@@ -135,7 +135,7 @@ export default function Hero() {
                 {headlineMain}
               </h2>
               {headlineTech && (
-                <p className="text-base sm:text-lg md:text-xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-400">
+                <p className="text-base sm:text-lg md:text-xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200">
                   {headlineTech}
                 </p>
               )}
@@ -146,12 +146,12 @@ export default function Hero() {
               variants={itemVariants}
               className="mt-3 flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-300 min-h-[26px]"
             >
-              <span className="text-emerald-500 font-bold">&gt;</span>
+              <span className="text-blue-500 font-bold">&gt;</span>
               <span className="text-slate-400 dark:text-slate-500">Specialization:</span>
               <span className="font-semibold text-slate-900 dark:text-slate-100">
                 {displayText}
               </span>
-              <span className="inline-block w-1.5 h-3.5 bg-emerald-500 animate-pulse ml-0.5" />
+              <span className="inline-block w-1.5 h-3.5 bg-blue-500 animate-pulse ml-0.5" />
             </motion.div>
 
             {/* Description (max ~60ch, softer color) */}
@@ -173,9 +173,9 @@ export default function Hero() {
                 target={personalData.bookingUrl ? "_blank" : "_self"}
                 rel="noopener noreferrer"
                 onClick={handleBooking}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-blue-600 hover:bg-blue-500 text-white shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
-                <Calendar className="w-4 h-4 text-slate-950" />
+                <Calendar className="w-4 h-4 text-white" />
                 <span>Schedule an Interview</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -188,7 +188,7 @@ export default function Hero() {
                 onClick={() => trackConversion('click_hero_whatsapp', 'Hero Section')}
                 className="inline-flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 shadow-sm backdrop-blur-md transition-all active:scale-95"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-500" />
+                <MessageSquare className="w-4 h-4 text-blue-500" />
                 <span>WhatsApp Me</span>
               </a>
 
@@ -200,7 +200,7 @@ export default function Hero() {
                 onClick={() => trackConversion('click_hero_view_cv', 'Hero Section')}
                 className="inline-flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 shadow-sm backdrop-blur-md transition-all active:scale-95 group"
               >
-                <FileDown className="w-4 h-4 text-emerald-500" />
+                <FileDown className="w-4 h-4 text-blue-500" />
                 <span>View CV</span>
                 <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">
                   (PDF)
@@ -210,7 +210,7 @@ export default function Hero() {
               {/* TERTIARY: View Projects text link */}
               <a
                 href="#projects"
-                className="inline-flex items-center gap-1.5 px-3 py-3 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-3 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -229,7 +229,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackConversion('click_hero_linkedin', 'Hero Section')}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:text-blue-500 hover:border-blue-500/40 transition-colors shadow-sm"
                 >
                   <Linkedin className="w-3.5 h-3.5 text-blue-500" />
                   <span>LinkedIn</span>
@@ -246,10 +246,10 @@ export default function Hero() {
           >
             {/* Profile Avatar Frame with Refined Gradient Ring */}
             <div className="relative group">
-              {/* Outer pulsing emerald gradient aura */}
-              <div className="absolute -inset-1.5 bg-gradient-to-tr from-emerald-500 via-teal-400 to-indigo-500 rounded-full blur-md opacity-70 group-hover:opacity-95 transition duration-500 animate-pulse" />
+              {/* Outer pulsing blue gradient aura */}
+              <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 rounded-full blur-md opacity-70 group-hover:opacity-95 transition duration-500 animate-pulse" />
 
-              <div className="relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-[3px] bg-gradient-to-tr from-emerald-500 via-teal-400 to-indigo-500 shadow-2xl">
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full p-[3px] bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-600 shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-950 flex items-center justify-center relative shadow-inner">
                   {/* Photo with fallback check */}
                   {!imgError && (
@@ -273,14 +273,14 @@ export default function Hero() {
 
                   {/* High-End Initials Avatar Fallback */}
                   {(!hasValidImage || imgError) && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-emerald-950/40 text-center select-none p-4">
-                      <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-1.5">
-                        <Terminal className="w-5 h-5 text-emerald-400" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950/40 text-center select-none p-4">
+                      <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mb-1.5">
+                        <Terminal className="w-5 h-5 text-blue-400" />
                       </div>
                       <span className="font-mono text-2xl font-extrabold text-white tracking-widest">
                         {personalData.initials}
                       </span>
-                      <span className="text-[10px] font-mono text-emerald-400 mt-1 uppercase tracking-wider">
+                      <span className="text-[10px] font-mono text-blue-400 mt-1 uppercase tracking-wider">
                         Full Stack Dev
                       </span>
                     </div>
@@ -288,10 +288,10 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Status Ring Tag (non-awkward position) */}
-              <div className="absolute -bottom-1 right-2 sm:right-4 bg-slate-950/95 border border-emerald-500/40 rounded-full px-3 py-1 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wide">
+              {/* Status Ring Tag */}
+              <div className="absolute -bottom-1 right-2 sm:right-4 bg-slate-950/95 border border-blue-500/40 rounded-full px-3 py-1 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
+                <span className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wide">
                   Active Pro
                 </span>
               </div>
@@ -302,10 +302,10 @@ export default function Hero() {
               {quickFacts.map((fact) => (
                 <div
                   key={fact.id}
-                  className="glass-card p-2.5 px-3.5 rounded-2xl shadow-sm hover:border-emerald-500/50 hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-between gap-3 text-left group"
+                  className="glass-card p-2.5 px-3.5 rounded-2xl shadow-sm hover:border-blue-500/40 hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-between gap-3 text-left group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                       {getQuickFactIcon(fact.id)}
                     </div>
                     <div>
@@ -317,7 +317,7 @@ export default function Hero() {
                       </p>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
+                  <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 shrink-0">
                     {fact.highlight}
                   </span>
                 </div>

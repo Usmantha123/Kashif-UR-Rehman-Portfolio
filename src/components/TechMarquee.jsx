@@ -19,22 +19,22 @@ export default function TechMarquee() {
     switch (category) {
       case 'Runtime':
       case 'Framework':
-        return <Server className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Server className="w-3.5 h-3.5 text-blue-500" />;
       case 'Frontend':
-        return <Code2 className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Code2 className="w-3.5 h-3.5 text-blue-500" />;
       case 'NoSQL DB':
       case 'SQL DB':
-        return <Database className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Database className="w-3.5 h-3.5 text-blue-500" />;
       case 'Fintech':
-        return <CreditCard className="w-3.5 h-3.5 text-emerald-500" />;
+        return <CreditCard className="w-3.5 h-3.5 text-blue-500" />;
       case 'Cloud':
-        return <Cloud className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Cloud className="w-3.5 h-3.5 text-blue-500" />;
       case 'Security':
-        return <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />;
+        return <ShieldCheck className="w-3.5 h-3.5 text-blue-500" />;
       case 'CI/CD':
-        return <GitBranch className="w-3.5 h-3.5 text-emerald-500" />;
+        return <GitBranch className="w-3.5 h-3.5 text-blue-500" />;
       default:
-        return <Layers className="w-3.5 h-3.5 text-emerald-500" />;
+        return <Layers className="w-3.5 h-3.5 text-blue-500" />;
     }
   };
 
@@ -43,15 +43,15 @@ export default function TechMarquee() {
   return (
     <div className="relative w-full overflow-hidden py-3.5 border-y border-slate-200/80 dark:border-slate-800/80 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md">
       {/* Edge gradient mask for smooth fade out */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 z-10 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 z-10 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 z-10 bg-gradient-to-r from-[var(--bg)] to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 z-10 bg-gradient-to-l from-[var(--bg)] to-transparent" />
 
       <div className="flex items-center">
         <div className="animate-marquee flex items-center gap-3 sm:gap-4 pl-4">
           {marqueeItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white/70 dark:bg-slate-900/70 text-slate-800 dark:text-slate-200 border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all whitespace-nowrap shadow-sm select-none"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white/70 dark:bg-slate-900/70 text-slate-800 dark:text-slate-200 border border-slate-200/90 dark:border-slate-800 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all whitespace-nowrap shadow-sm select-none"
             >
               {getIcon(item.category)}
               <span className="font-semibold text-slate-900 dark:text-white">

@@ -27,8 +27,8 @@ export default function StickyActions() {
         <div className="relative">
           {/* Tooltip */}
           {showTooltip && (
-            <div className="absolute right-0 bottom-full mb-3 px-3 py-1.5 rounded-xl bg-slate-900/95 backdrop-blur-md border border-emerald-500/40 text-white text-xs font-medium shadow-xl whitespace-nowrap animate-fade-in flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="absolute right-0 bottom-full mb-3 px-3 py-1.5 rounded-xl bg-slate-900/95 backdrop-blur-md border border-blue-500/40 text-white text-xs font-medium shadow-xl whitespace-nowrap animate-fade-in flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
               <span>Chat with Kashif</span>
             </div>
           )}
@@ -40,11 +40,11 @@ export default function StickyActions() {
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
             onClick={() => trackConversion('click_floating_whatsapp', 'Desktop Float')}
-            className="flex items-center justify-center w-14 h-14 p-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-glow hover:shadow-glow-lg border border-emerald-300/30 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="flex items-center justify-center w-14 h-14 p-3.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white shadow-glow hover:shadow-glow-lg border border-blue-400/30 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             aria-label="Chat with Kashif on WhatsApp"
             title="Chat with Kashif"
           >
-            <MessageSquare className="w-6 h-6 text-slate-950" />
+            <MessageSquare className="w-6 h-6 text-white" />
           </a>
         </div>
       </div>
@@ -57,9 +57,9 @@ export default function StickyActions() {
           target={personalData.bookingUrl ? "_blank" : "_self"}
           rel="noopener noreferrer"
           onClick={handleBooking}
-          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl text-xs font-bold bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20 active:scale-95 transition-all text-center"
+          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl text-xs font-bold bg-blue-600 text-white shadow-md shadow-blue-500/20 active:scale-95 transition-all text-center"
         >
-          <Calendar className="w-3.5 h-3.5 shrink-0" />
+          <Calendar className="w-3.5 h-3.5 text-white shrink-0" />
           <span className="truncate">Book Interview</span>
         </a>
 
@@ -71,7 +71,7 @@ export default function StickyActions() {
           onClick={() => trackConversion('click_mobile_whatsapp', 'Sticky Mobile Bar')}
           className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-100 border border-slate-700/80 active:scale-95 transition-all text-center"
         >
-          <MessageSquare className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+          <MessageSquare className="w-3.5 h-3.5 text-blue-400 shrink-0" />
           <span className="truncate">WhatsApp</span>
         </a>
 
@@ -79,7 +79,7 @@ export default function StickyActions() {
         <a
           href={`tel:${personalData.phoneRaw}`}
           onClick={() => trackConversion('click_mobile_call', 'Sticky Mobile Bar')}
-          className="flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800/90 text-emerald-400 border border-slate-700/80 active:scale-95 transition-all shrink-0"
+          className="flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800/90 text-blue-400 border border-slate-700/80 active:scale-95 transition-all shrink-0"
           aria-label="Direct Phone Call to Kashif"
         >
           <Phone className="w-4 h-4" />

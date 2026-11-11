@@ -29,17 +29,17 @@ export default function CallToActionBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900/95 to-emerald-950/40 border border-emerald-500/30 shadow-2xl text-center"
+          className="relative rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden bg-gradient-to-br from-[#0B1120] via-[#111A2E] to-[#1E293B] border border-blue-500/30 shadow-2xl text-center"
         >
           {/* Top Gradient Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-500" />
 
           {/* Background Ambient Glow */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Badge */}
-          <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
+          <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Ready for Immediate Impact</span>
           </div>
@@ -47,7 +47,7 @@ export default function CallToActionBanner() {
           {/* Headline */}
           <h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto">
             Hiring a Backend / Full Stack Developer?{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
               Let&apos;s schedule a 15-minute call.
             </span>
           </h2>
@@ -63,9 +63,9 @@ export default function CallToActionBanner() {
               target={personalData.bookingUrl ? "_blank" : "_self"}
               rel="noopener noreferrer"
               onClick={handleBookingClick}
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95 group"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95 group"
             >
-              <Calendar className="w-5 h-5 text-slate-950" />
+              <Calendar className="w-5 h-5 text-white" />
               <span>Book an Interview</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -77,7 +77,7 @@ export default function CallToActionBanner() {
               onClick={() => trackConversion('click_whatsapp_cta_banner', 'CTA Banner')}
               className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-semibold bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-700/80 shadow-md backdrop-blur-sm transition-all active:scale-95"
             >
-              <MessageSquare className="w-4 h-4 text-emerald-400" />
+              <MessageSquare className="w-4 h-4 text-blue-400" />
               <span>WhatsApp Me</span>
             </a>
 
@@ -90,7 +90,7 @@ export default function CallToActionBanner() {
             >
               <FileDown className="w-4 h-4 text-slate-400" />
               <span>View CV</span>
-              <span className="text-[11px] font-mono text-emerald-400/80">({personalData.cvUpdatedDate})</span>
+              <span className="text-[11px] font-mono text-blue-400/80">({personalData.cvUpdatedDate})</span>
             </a>
           </div>
         </motion.div>

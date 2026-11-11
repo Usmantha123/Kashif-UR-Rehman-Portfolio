@@ -19,7 +19,7 @@ export default function Experience() {
           subtitle="Proven track record in high-impact backend engineering, cloud platforms, and security."
         />
 
-        <div className="relative mt-12 pl-6 sm:pl-8 border-l-2 border-emerald-500/30 space-y-12">
+        <div className="relative mt-12 pl-6 sm:pl-8 border-l-2 border-blue-500/30 space-y-12">
           {experienceData.map((item, index) => (
             <motion.div
               key={item.id}
@@ -30,28 +30,28 @@ export default function Experience() {
               className="relative group"
             >
               {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-4 border-emerald-500 shadow-glow flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
+              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-4 border-blue-500 shadow-glow flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse" />
               </div>
 
               {/* Card Container */}
-              <div className="relative rounded-2xl p-6 sm:p-8 glass-card hover:border-emerald-500/40 hover:shadow-glow transition-all duration-300 overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative rounded-2xl p-6 sm:p-8 glass-card hover:border-blue-500/40 hover:shadow-glow transition-all duration-300 overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-5 border-b border-slate-200/80 dark:border-slate-800">
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                       {item.role}
                     </h3>
-                    <p className="text-emerald-600 dark:text-emerald-400 font-semibold text-base sm:text-lg flex items-center gap-1.5 mt-1">
-                      <Briefcase className="w-4 h-4 text-emerald-500" />
+                    <p className="text-blue-600 dark:text-blue-400 font-semibold text-base sm:text-lg flex items-center gap-1.5 mt-1">
+                      <Briefcase className="w-4 h-4 text-blue-500" />
                       <span>{item.company}</span>
                     </p>
                   </div>
 
                   <div className="flex flex-wrap sm:flex-col sm:items-end gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium">
-                      <Calendar className="w-3.5 h-3.5 text-emerald-500" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 font-medium">
+                      <Calendar className="w-3.5 h-3.5 text-blue-500" />
                       {item.period}
                     </span>
                     <span className="inline-flex items-center gap-1 text-slate-500 dark:text-slate-400">
@@ -69,7 +69,7 @@ export default function Experience() {
                   <ul className="space-y-3.5">
                     {item.highlights.map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-1 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-blue-500 mt-1 shrink-0" />
                         <span>{bullet}</span>
                       </li>
                     ))}

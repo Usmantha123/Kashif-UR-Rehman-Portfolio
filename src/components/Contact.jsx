@@ -147,7 +147,7 @@ export default function Contact({ onShowToast }) {
         {/* 1-Click "Quick Contact" Bar above the form */}
         <div className="max-w-6xl mx-auto mb-10">
           <div className="p-5 sm:p-7 rounded-3xl glass-card">
-            <div className="flex items-center gap-2 mb-4 text-xs font-mono font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            <div className="flex items-center gap-2 mb-4 text-xs font-mono font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
               <Sparkles className="w-4 h-4" />
               <span>Instant Recruiter Channels</span>
             </div>
@@ -159,10 +159,10 @@ export default function Contact({ onShowToast }) {
                 target={personalData.bookingUrl ? "_blank" : "_self"}
                 rel="noopener noreferrer"
                 onClick={handleBookCall}
-                className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 transition-all hover:-translate-y-0.5 group"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-500/30 transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-500 shrink-0">
                     <Calendar className="w-4 h-4" />
                   </div>
                   <div className="text-left">
@@ -182,7 +182,7 @@ export default function Contact({ onShowToast }) {
                 className="flex items-center justify-between p-3.5 rounded-xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/60 transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
                     <MessageSquare className="w-4 h-4" />
                   </div>
                   <div className="text-left">
@@ -200,7 +200,7 @@ export default function Contact({ onShowToast }) {
                 className="flex items-center justify-between p-3.5 rounded-xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/60 transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2.5 overflow-hidden text-left">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="truncate">
@@ -209,7 +209,7 @@ export default function Contact({ onShowToast }) {
                   </div>
                 </div>
                 {copied && copiedText === contactData.email ? (
-                  <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                 ) : (
                   <Copy className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity shrink-0" />
                 )}
@@ -222,7 +222,7 @@ export default function Contact({ onShowToast }) {
                 className="flex items-center justify-between p-3.5 rounded-xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/60 transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2.5 text-left">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
@@ -231,7 +231,7 @@ export default function Contact({ onShowToast }) {
                   </div>
                 </div>
                 {copied && copiedText === contactData.phone ? (
-                  <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                 ) : (
                   <Copy className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity shrink-0" />
                 )}
@@ -261,7 +261,7 @@ export default function Contact({ onShowToast }) {
               <div className="mt-6 space-y-4">
                 {/* Location */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
@@ -273,7 +273,7 @@ export default function Contact({ onShowToast }) {
                 {/* LinkedIn */}
                 <div className="flex items-center justify-between gap-3 pt-3 border-t border-slate-200/80 dark:border-slate-800">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                       <Linkedin className="w-4 h-4" />
                     </div>
                     <div>
@@ -286,7 +286,7 @@ export default function Contact({ onShowToast }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackConversion('click_contact_linkedin', 'Contact Info')}
-                    className="p-2.5 rounded-xl text-slate-400 hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    className="p-2.5 rounded-xl text-slate-400 hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                     aria-label="Visit Kashif's LinkedIn Profile"
                   >
                     <ExternalLink className="w-4 h-4" />
@@ -296,8 +296,8 @@ export default function Contact({ onShowToast }) {
             </div>
 
             {/* Quick Pitch Box */}
-            <div className="p-6 rounded-2xl glass-card border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/20">
-              <h4 className="text-xs font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 tracking-wider">
+            <div className="p-6 rounded-2xl glass-card border-blue-500/30 bg-blue-500/5 dark:bg-blue-950/20">
+              <h4 className="text-xs font-mono font-bold uppercase text-blue-600 dark:text-blue-400 tracking-wider">
                 Recruiter Quick Fact
               </h4>
               <p className="mt-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -315,9 +315,9 @@ export default function Contact({ onShowToast }) {
             className="lg:col-span-7"
           >
             <div id="contact-form" className="rounded-3xl p-6 sm:p-8 glass-card relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500 opacity-60" />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-500 opacity-60" />
 
-              <div className="flex items-center gap-2 mb-6 text-emerald-500 font-mono text-xs uppercase tracking-wider">
+              <div className="flex items-center gap-2 mb-6 text-blue-500 font-mono text-xs uppercase tracking-wider">
                 <MessageSquare className="w-4 h-4" />
                 <span>Send a Direct Message</span>
               </div>
@@ -327,7 +327,7 @@ export default function Contact({ onShowToast }) {
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-xs font-mono font-medium text-slate-700 dark:text-slate-300 mb-1 uppercase">
-                      Your Name <span className="text-emerald-500">*</span>
+                      Your Name <span className="text-blue-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -339,7 +339,7 @@ export default function Contact({ onShowToast }) {
                       disabled={status === 'loading'}
                       className={`w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border ${
                         errors.name ? 'border-red-500' : 'border-slate-200 dark:border-slate-800'
-                      } focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors text-sm`}
+                      } focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm`}
                     />
                     {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                   </div>
@@ -358,7 +358,7 @@ export default function Contact({ onShowToast }) {
                         onChange={handleChange}
                         placeholder="e.g. Acme Tech"
                         disabled={status === 'loading'}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors text-sm"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
                       />
                       <Building className="absolute right-3 top-3 w-4 h-4 text-slate-400 pointer-events-none" />
                     </div>
@@ -369,7 +369,7 @@ export default function Contact({ onShowToast }) {
                   {/* Email */}
                   <div>
                     <label htmlFor="email" className="block text-xs font-mono font-medium text-slate-700 dark:text-slate-300 mb-1 uppercase">
-                      Email Address <span className="text-emerald-500">*</span>
+                      Email Address <span className="text-blue-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -381,7 +381,7 @@ export default function Contact({ onShowToast }) {
                       disabled={status === 'loading'}
                       className={`w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border ${
                         errors.email ? 'border-red-500' : 'border-slate-200 dark:border-slate-800'
-                      } focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors text-sm`}
+                      } focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm`}
                     />
                     {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                   </div>
@@ -400,7 +400,7 @@ export default function Contact({ onShowToast }) {
                         onChange={handleChange}
                         placeholder="e.g. Senior Backend / Full Stack"
                         disabled={status === 'loading'}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors text-sm"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
                       />
                       <Briefcase className="absolute right-3 top-3 w-4 h-4 text-slate-400 pointer-events-none" />
                     </div>
@@ -410,7 +410,7 @@ export default function Contact({ onShowToast }) {
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-xs font-mono font-medium text-slate-700 dark:text-slate-300 mb-1 uppercase">
-                    Your Message <span className="text-emerald-500">*</span>
+                    Your Message <span className="text-blue-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -422,7 +422,7 @@ export default function Contact({ onShowToast }) {
                     disabled={status === 'loading'}
                     className={`w-full px-3.5 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border ${
                       errors.message ? 'border-red-500' : 'border-slate-200 dark:border-slate-800'
-                    } focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors text-sm resize-none`}
+                    } focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm resize-none`}
                   />
                   {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
                 </div>
@@ -431,7 +431,7 @@ export default function Contact({ onShowToast }) {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-emerald-500 hover:bg-emerald-400 disabled:bg-emerald-500/50 text-slate-950 shadow-glow transition-all duration-200 active:scale-98 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 text-white shadow-glow transition-all duration-200 active:scale-98 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   {status === 'loading' ? (
                     <>
@@ -451,7 +451,7 @@ export default function Contact({ onShowToast }) {
                   <div
                     className={`p-3.5 rounded-xl text-xs font-medium ${
                       status === 'success'
-                        ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                        ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
                         : 'bg-red-500/10 text-red-400 border border-red-500/20'
                     }`}
                   >
