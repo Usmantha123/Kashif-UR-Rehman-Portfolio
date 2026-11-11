@@ -201,23 +201,39 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT COLUMN — Photo */}
+          {/* ── RIGHT COLUMN — Premium Floating Card Photo Section ── */}
           <motion.div
             variants={itemVariants}
-            className="flex-shrink-0 relative flex items-center justify-center lg:justify-end"
+            className="flex-1 flex items-center justify-center lg:justify-end relative select-none"
           >
-            {/* Outer soft blue glow disc */}
-            <div className="relative w-80 h-80 sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] flex items-center justify-center">
-              {/* Light blue gradient background circle */}
-              <div className="absolute inset-0 rounded-full
-                              bg-gradient-to-br from-blue-100 via-blue-50 to-slate-100
-                              dark:from-blue-900/40 dark:via-blue-800/20 dark:to-slate-800/40
-                              shadow-xl" />
+            {/* Background Abstract Glow & Soft Shapes for Depth */}
+            <div className="absolute -top-10 -right-10 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-br from-blue-300/40 via-blue-200/30 to-transparent dark:from-blue-600/20 rounded-full blur-3xl pointer-events-none -z-10" />
+            <div className="absolute -bottom-8 -left-8 w-60 h-60 bg-blue-400/25 dark:bg-blue-500/15 rounded-full blur-2xl pointer-events-none -z-10" />
 
-              {/* Photo circle — slightly smaller than the bg disc */}
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[370px] lg:h-[370px]
-                              rounded-full overflow-hidden shadow-2xl border-4
-                              border-white/80 dark:border-slate-700/80 z-10">
+            {/* Floating Frame Container with 4-5s Gentle Motion */}
+            <div className="relative group animate-float" style={{ animationDuration: '4.5s' }}>
+              
+              {/* Outer Decorative Subtle Ambient Glow Layer */}
+              <div
+                className="absolute inset-0 -rotate-3 scale-[1.03] bg-gradient-to-tr from-blue-400/30 via-blue-300/20 to-blue-500/30 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  borderRadius: '30% 24% 28% 22%',
+                }}
+              />
+
+              {/* The Custom-Shaped Rotated Frame */}
+              <div
+                className="relative w-[290px] h-[300px] sm:w-[380px] sm:h-[390px] lg:w-[480px] lg:h-[490px]
+                           border-[7px] border-white dark:border-slate-800/90
+                           shadow-[0_20px_50px_rgba(59,130,246,0.28)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+                           overflow-hidden -rotate-3 hover:rotate-0 hover:scale-[1.02]
+                           transition-all duration-500 ease-out z-10"
+                style={{
+                  borderRadius: '30% 24% 28% 22%',
+                  background: 'linear-gradient(135deg, #E6F0FF 0%, #8CB5FF 55%, #3B82F6 100%)',
+                }}
+              >
+                {/* Photo Element counter-rotated so head stays straight and face/shoulders clearly visible */}
                 {!imgError && (
                   <img
                     src={profileImg}
@@ -227,34 +243,53 @@ export default function Hero() {
                       else setImgError(true);
                     }}
                     onError={() => setImgError(true)}
-                    className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
+                    className={`w-full h-full object-cover object-top rotate-3 scale-110 transition-all duration-500 ${
                       hasValidImage ? 'opacity-100' : 'opacity-0'
                     }`}
+                    style={{
+                      mixBlendMode: 'multiply',
+                    }}
                     loading="eager"
                   />
                 )}
-                {/* Fallback initials */}
+
+                {/* High-End Initials Avatar Fallback */}
                 {(!hasValidImage || imgError) && (
-                  <div className="absolute inset-0 flex items-center justify-center
-                                  bg-gradient-to-br from-blue-200 to-blue-300
-                                  dark:from-blue-900 dark:to-blue-800">
-                    <span className="text-5xl font-black text-blue-600 dark:text-blue-300 tracking-widest">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-300 via-blue-400 to-blue-600 text-center select-none rotate-3">
+                    <span className="font-mono text-6xl font-black text-white tracking-widest drop-shadow-md">
                       {personalData.initials}
                     </span>
                   </div>
                 )}
               </div>
 
-              {/* Active for Hire badge — bottom-right of the outer disc */}
-              <div className="absolute bottom-2 right-0 sm:-right-2 z-20
-                             flex items-center gap-1.5 px-4 py-2.5 rounded-full
-                             bg-white dark:bg-slate-800 shadow-lg
-                             border border-slate-100 dark:border-slate-700">
-                <span className="text-base">👑</span>
-                <span className="text-sm font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">
-                  + Active for Hire
+              {/* ── Active for Hire Badge ── */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="absolute bottom-4 right-1 sm:bottom-6 sm:-right-2 z-20
+                           inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full
+                           bg-white/95 dark:bg-slate-900/95 backdrop-blur-md
+                           border border-slate-100 dark:border-slate-800
+                           shadow-[0_10px_25px_rgba(37,99,235,0.2)] dark:shadow-[0_10px_25px_rgba(0,0,0,0.4)]
+                           cursor-default select-none animate-float"
+                style={{ animationDuration: '3.8s', animationDelay: '0.5s' }}
+              >
+                {/* Gold Crown */}
+                <span className="text-base sm:text-lg leading-none" role="img" aria-label="Crown">
+                  👑
                 </span>
-              </div>
+
+                {/* Green Status Indicator */}
+                <span className="relative flex h-2.5 w-2.5 items-center justify-center">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+
+                {/* Badge Text */}
+                <span className="text-xs sm:text-sm font-bold text-[#2563EB] dark:text-blue-400 tracking-tight whitespace-nowrap">
+                  Active for Hire
+                </span>
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>
