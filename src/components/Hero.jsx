@@ -235,11 +235,6 @@ export default function Hero() {
                   <span>LinkedIn</span>
                   <ExternalLink className="w-3 h-3 text-slate-400" />
                 </a>
-
-                <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                  <span>SonarQube &amp; Mend Bolt clean code track record</span>
-                </span>
               </div>
             </motion.div>
           </div>

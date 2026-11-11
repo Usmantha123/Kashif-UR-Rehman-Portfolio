@@ -17,7 +17,7 @@ export const personalData = {
     "AI Backend Integration Specialist",
     "Full Stack Developer"
   ],
-  location: "Peshawar, Pakistan",
+  location: "Islamabad, Pakistan",
   availabilityStatus: "Available for new opportunities",
   openTo: "Open to remote / on-site roles",
   email: "kashifkhankk799872@gmail.com",
@@ -227,7 +227,7 @@ export const experienceData = [
     company: "Veroke Pvt Ltd",
     period: "October 2024 – Present",
     type: "Full-time",
-    location: "Peshawar, Pakistan",
+    location: "Islamabad, Pakistan",
     highlights: [
       "Design and develop scalable backend systems using Node.js, Express.js, and NestJS for production applications",
       "Architect complete backend solutions across microservices and monolithic architectures, ensuring high performance, reliability, and security",
@@ -346,7 +346,7 @@ export const contactData = {
   email: "kashifkhankk799872@gmail.com",
   phone: "+92 302 9119254",
   phoneRaw: "+923029119254",
-  location: "Peshawar, Pakistan",
+  location: "Islamabad, Pakistan",
   linkedin: "https://www.linkedin.com/in/kashif-rehman-39238b244/",
   whatsappUrl: "https://wa.me/923029119254?text=Hi%20Kashif%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity.",
 };
